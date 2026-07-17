@@ -10,10 +10,16 @@
 
 import os
 
+# file = open("osama.txt")
+
 print(os.getcwd()) 
 
 print(os.path.dirname(os.path.abspath(__file__)))
 
+# change current working directory
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
 print(os.path.abspath(__file__))
 
+print(os.getcwd()) 
 # file = open("osama.txt", "w")

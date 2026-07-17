@@ -1,1 +1,2 @@
-file = open("osama.txt", "w")
+for line in my_file:
+    print(line)
