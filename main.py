@@ -78,10 +78,17 @@ if __name__ == "__main__":
             driver.get("https://www.techpowerup.com/gpu-specs/")
 
             WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, "//input[@class= 'js-search-input search-input']"))).send_keys(name)
+            time.sleep(3)
+
+            item = driver.find_element(By.XPATH, "//a[@class='item-name']").get_attribute("href")
+            driver.switch_to.new_window("tab")
+            driver.get(item)
+
+
             time.sleep(5)
 
             # Architecture - المعمارية
-            architecture = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, "//dt[@text()='Architecture']")))
+            # architecture = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, "//dt[@text()='Architecture']")))
             # Process Size - دقة التصنيع
             # Memory Size (VRAM) - حجم الذاكرة
             # Memory Type - نوع الذاكرة
